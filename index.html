@@ -900,6 +900,56 @@ nav {
     display: block;
     margin-top: 1.5rem;
 }
+
+        /* =========================
+   GRAPHIC DESIGNS
+========================= */
+
+.design-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.design-card {
+    overflow: hidden;
+    border: 2px solid rgba(13, 217, 255, 0.3);
+    background: rgba(255, 255, 255, 0.03);
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.design-card:hover {
+    border-color: rgba(244, 224, 77, 0.8);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(244, 224, 77, 0.2);
+}
+
+.design-card img {
+    width: 100%;
+    height: 350px;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.design-card:hover img {
+    transform: scale(1.04);
+}
+
+@media (max-width: 768px) {
+    .design-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .design-card img {
+        height: auto;
+        max-height: 500px;
+        object-fit: contain;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -931,8 +981,9 @@ nav {
                 <div class="hero-grid">
                     <div class="hero-content">
                         <h1>Marcjohn Dave <span>Calunod</span></h1>
-                        <p>Information Technology graduate • Full Stack Developer • UI/UX Enthusiast</p>
-                        <p>Specializing in building reliable, efficient, and modern web systems with C++, JavaScript, PHP, and more.</p>
+                       <p>Information Technology Graduate • Web Developer • Digital Solutions</p>
+<p>Experienced in website development, maintenance, and hosting management, focused on creating reliable and efficient digital solutions.</p>
+
                         
                         <div class="stats-grid">
                             <div class="stat-card">
@@ -969,15 +1020,14 @@ nav {
         <section id="about">
             <div class="container">
                 <h2>About <span>Me</span></h2>
-                <div class="about-content">
-                    <p>
-I am an Information Technology graduate from Zamboanga Peninsula Polytechnic State University, focused on building practical and efficient web applications. I work as a Full Stack Developer, developing and maintaining systems using PHP, JavaScript, and MySQL.
-</p>
+             <div class="about-content">
+    <p>
+        Information Technology graduate with experience in website development,
+        maintenance, and hosting management. Committed to creating reliable
+        and efficient digital solutions.
+    </p>
+</div>
 
-<p>
-I have experience working with platforms like WordPress and Squarespace, handling website development, UI improvements, and maintenance for both local and international clients. I aim to deliver clean, reliable, and user-friendly solutions.
-</p>
-                </div>
             </div>
         </section>
 
@@ -1022,6 +1072,35 @@ I have experience working with platforms like WordPress and Squarespace, handlin
                 </div>
             </div>
         </section>
+
+        <!-- Graphic Designs Section -->
+<section id="graphic-designs">
+    <div class="container">
+        <h2>Graphic <span>Designs</span></h2>
+        <p class="section-intro">
+            A selection of my graphic design and creative work.
+        </p>
+
+        <div class="design-grid">
+            <div class="design-card">
+                <img src="1.png" alt="Graphic Design 1">
+            </div>
+
+            <div class="design-card">
+                <img src="2.png" alt="Graphic Design 2">
+            </div>
+
+            <div class="design-card">
+                <img src="3.png" alt="Graphic Design 3">
+            </div>
+
+            <div class="design-card">
+                <img src="4.png" alt="Graphic Design 4">
+            </div>
+        </div>
+    </div>
+</section>
+
 
    <!-- Projects Section -->
 <section id="projects">
@@ -1150,30 +1229,70 @@ I have experience working with platforms like WordPress and Squarespace, handlin
         <section id="skills">
             <div class="container">
                 <h2>Technical <span>Arsenal</span></h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Frontend</h3>
-                        <div class="skill-item"><span class="skill-dot"></span>HTML</div>
-                        <div class="skill-item"><span class="skill-dot"></span>CSS</div>
-                        <div class="skill-item"><span class="skill-dot"></span>JavaScript</div>
-                        <div class="skill-item"><span class="skill-dot"></span>Tailwind CSS</div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Backend & Databases</h3>
-                        <div class="skill-item"><span class="skill-dot"></span>PHP</div>
-                        <div class="skill-item"><span class="skill-dot"></span>MySQL</div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Platforms & Tools</h3>
-                        <div class="skill-item"><span class="skill-dot"></span>WordPress</div>
-                        <div class="skill-item"><span class="skill-dot"></span>Squarespace</div>
-                        <div class="skill-item"><span class="skill-dot"></span>C++</div>
-                        <div class="skill-item"><span class="skill-dot"></span>Lua</div>
-                        <div class="skill-item"><span class="skill-dot"></span>UI Design</div>
-                        <div class="skill-item"><span class="skill-dot"></span>Video Editing</div>
-                    </div>
-                </div>
-            </div>
+               <div class="skills-grid">
+
+    <div class="skill-category">
+        <h3>Frontend</h3>
+
+        <div class="skill-item">
+            <span class="skill-dot"></span>HTML
+        </div>
+
+        <div class="skill-item">
+            <span class="skill-dot"></span>CSS
+        </div>
+
+        <div class="skill-item">
+            <span class="skill-dot"></span>JavaScript
+        </div>
+    </div>
+
+    <div class="skill-category">
+        <h3>Backend & Databases</h3>
+
+        <div class="skill-item">
+            <span class="skill-dot"></span>PHP
+        </div>
+
+        <div class="skill-item">
+            <span class="skill-dot"></span>MySQL
+        </div>
+    </div>
+
+    <div class="skill-category">
+        <h3>Platforms & Tools</h3>
+
+        <div class="skill-item">
+            <span class="skill-dot"></span>cPanel
+        </div>
+
+        <div class="skill-item">
+            <span class="skill-dot"></span>WordPress
+        </div>
+
+        <div class="skill-item">
+            <span class="skill-dot"></span>Squarespace
+        </div>
+
+        <div class="skill-item">
+            <span class="skill-dot"></span>Photoshop
+        </div>
+
+        <div class="skill-item">
+            <span class="skill-dot"></span>Canva
+        </div>
+
+        <div class="skill-item">
+            <span class="skill-dot"></span>DaVinci Resolve
+        </div>
+
+        <div class="skill-item">
+            <span class="skill-dot"></span>CapCut
+        </div>
+    </div>
+
+</div>
+
         </section>
 
         <!-- Contact Section -->
@@ -1221,9 +1340,12 @@ I have experience working with platforms like WordPress and Squarespace, handlin
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#skills">Skills</a>
+            <a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#graphic-designs">Designs</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+
             </div>
             <div class="footer-section">
                 <h4>Social</h4>
