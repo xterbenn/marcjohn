@@ -902,6 +902,7 @@ nav {
 }
 
         /* =========================
+ /* =========================
    GRAPHIC DESIGNS
 ========================= */
 
@@ -918,6 +919,7 @@ nav {
     background: rgba(255, 255, 255, 0.03);
     transition: all 0.4s ease;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .design-card:hover {
@@ -928,14 +930,61 @@ nav {
 
 .design-card img {
     width: 100%;
-    height: 350px;
+    aspect-ratio: 1 / 1;
+    height: auto;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.5s ease;
 }
 
 .design-card:hover img {
     transform: scale(1.04);
+}
+
+/* Image Preview Modal */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.image-modal.active {
+    display: flex;
+}
+
+.image-modal img {
+    max-width: 90%;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Close Button */
+.image-modal .close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    line-height: 1;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10000;
+}
+
+.image-modal .close-modal:hover {
+    color: #f4e04d;
+    transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
@@ -944,12 +993,25 @@ nav {
     }
 
     .design-card img {
-        height: auto;
-        max-height: 500px;
+        aspect-ratio: 1 / 1;
         object-fit: contain;
     }
-}
 
+    .image-modal {
+        padding: 1rem;
+    }
+
+    .image-modal img {
+        max-width: 95%;
+        max-height: 85vh;
+    }
+
+    .image-modal .close-modal {
+        top: 15px;
+        right: 20px;
+        font-size: 35px;
+    }
+}
     </style>
 </head>
 <body>
@@ -1100,26 +1162,30 @@ nav {
             A selection of my graphic design and creative work.
         </p>
 
-        <div class="design-grid">
-            <div class="design-card">
-                <img src="image/1.png" alt="Graphic Design 1">
-            </div>
+ <div class="design-card" onclick="openImage(this)">
+    <img src="image/1.png" alt="Graphic Design 1">
+</div>
 
-            <div class="design-card">
-                <img src="image/2.png" alt="Graphic Design 2">
-            </div>
+<div class="design-card" onclick="openImage(this)">
+    <img src="image/2.png" alt="Graphic Design 2">
+</div>
 
-            <div class="design-card">
-                <img src="image/3.png" alt="Graphic Design 3">
-            </div>
+<div class="design-card" onclick="openImage(this)">
+    <img src="image/3.png" alt="Graphic Design 3">
+</div>
 
-            <div class="design-card">
-                <img src="image/4.png" alt="Graphic Design 4">
-            </div>
+<div class="design-card" onclick="openImage(this)">
+    <img src="image/4.png" alt="Graphic Design 4">
+</div>
         </div>
     </div>
 </section>
 
+        <!-- Image Preview Modal -->
+<div class="image-modal" id="imageModal">
+    <span class="close-modal" onclick="closeImage()">&times;</span>
+    <img id="modalImage" src="" alt="Preview">
+</div>
 
    <!-- Projects Section -->
 <section id="projects">
